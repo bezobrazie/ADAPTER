@@ -4,6 +4,7 @@ from main import Mario, IStriker, Unit, Warrior, Zealot
 class MarioStrikerAdapter(Mario, IStriker):
 
     def __init__(self, mario: Mario):
+        super().__init__()
         self.mario = mario
 
     def attack(self, target: Unit) -> None:
@@ -21,5 +22,5 @@ if __name__ == "__main__":
     warrior.attack(zealot)
     mario_adaptee.attack(warrior)
 
-    warrior.attack(mario)
-    zealot.attack(mario)
+    warrior.attack(mario_adaptee)
+    zealot.attack(mario_adaptee)
